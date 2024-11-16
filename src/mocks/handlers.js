@@ -1,3 +1,7 @@
 import { http, HttpResponse } from "msw";
 
-export const handlers = [];
+export const handlers = [
+  http.get("/api/users", (resolver) => {
+    return HttpResponse.json({ users: [{ id: 1, name: "Frank" }] });
+  }),
+];
