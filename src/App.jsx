@@ -14,6 +14,16 @@ function App() {
       .then((data) => setUsers(data.users));
   }, []);
 
+  const onSend = () => {
+    fetch("/api/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ content }),
+    });
+  };
+
   return (
     <div>
       <ul>
@@ -29,6 +39,8 @@ function App() {
           value={content}
           onChange={handleChange}
         />
+
+        <button onClick={onSend}>Send</button>
       </div>
     </div>
   );

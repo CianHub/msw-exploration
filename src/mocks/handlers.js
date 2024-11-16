@@ -14,6 +14,6 @@ export const handlers = [
     const parsed = JSON.parse(body);
     console.log(parsed);
 
-    return HttpResponse;
+    return HttpResponse.ok();
   }),
 ];
