@@ -11,8 +11,9 @@ export const handlers = [
   }),
   http.post("/api/messages", async ({ request }) => {
     const body = await request.json();
-    console.log(body);
-
-    return HttpResponse.json({ success: true });
+    return HttpResponse.json(
+      { success: true, content: body.content },
+      { status: 201 }
+    );
   }),
 ];
