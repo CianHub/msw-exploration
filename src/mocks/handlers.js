@@ -9,4 +9,11 @@ export const handlers = [
       ],
     });
   }),
+  http.post("/api/messages", async ({ request }) => {
+    const body = await request.json({});
+    const parsed = JSON.parse(body);
+    console.log(parsed);
+
+    return HttpResponse;
+  }),
 ];
